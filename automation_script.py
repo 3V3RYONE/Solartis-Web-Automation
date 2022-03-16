@@ -86,7 +86,7 @@ def Beneficiary(list_ben,count_ben):
    
     for i in range(0,count_ben):
        
-        add_ben = WebDriverWait(browser,1800000000).until(EC.element_to_be_clickable((By.ID,"j_idt53"))).click()
+        add_ben = WebDriverWait(browser,180000).until(EC.element_to_be_clickable((By.ID,"j_idt66"))).click()
        
         time.sleep(1)
         #first_ben_name = browser.find_element_by_id("beneficiaryFirstName")
@@ -117,10 +117,10 @@ def Beneficiary(list_ben,count_ben):
         percentage.clear()
         percentage.send_keys(list_ben[i][4])
        
-        save = browser.find_element(by=By.ID, value="j_idt127").click()
+        save = browser.find_element(by=By.ID, value="j_idt150").click()
         time.sleep(3)
    
-    continue_ben = WebDriverWait(browser,180).until(EC.element_to_be_clickable((By.ID,"j_idt55"))).click()
+    continue_ben = WebDriverWait(browser,180).until(EC.element_to_be_clickable((By.ID,"j_idt68"))).click()
 
 def Dependents(list_dependents,count_dep):
     
@@ -265,14 +265,14 @@ while r<=row:
         #no dependents
         Payment(list_payment,list_data)
         Purchase()
-        #Download()
+        # Download()
     else:
         Enrollee_Information(list_data)
         Beneficiary(list_ben,count_ben)
         Dependents(list_dependents,count_dep)
         Payment(list_payment,list_data)
         Purchase()
-        #Download()
+        # Download()
     
     if count_ben>=count_dep:
         r+=count_ben+1
